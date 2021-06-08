@@ -151,7 +151,9 @@ summary(Model2)
 
 Exam$school_type <- ifelse(Exam$type == 'Mxd', 1, 0)
 
-Model5 <- glmer(school_type ~ normexam + (1|school), family = "binomial", data = Exam)
+Model5 <- glmer(school_type ~ normexam + (1|school), 
+                family = "binomial", 
+                data = Exam)
 
 summary(Model5)
 
@@ -167,10 +169,12 @@ predict(Model2, Exam)
 
 
 new_Exam <- Exam[sample(1:nrow(Exam), 100), ]
+
 new_Exam$school <- sample(101:200)
 
 predict(Model2, new_Exam, allow.new.levels = T)
 
+View(new_Exam)
 
 
 # Исследование случайных эффектов

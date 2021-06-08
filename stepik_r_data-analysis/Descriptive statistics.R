@@ -9,7 +9,7 @@ str(df)
 df$vs  <- factor(df$vs  , labels = c("V", "S"))
 df$am  <- factor(df$am  , labels = c("Auto", "Manual"))
 
-
+head(df)
 #Step 3: Descriptive statistics
 
 median(df$mpg)

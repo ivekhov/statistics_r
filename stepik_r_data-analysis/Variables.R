@@ -63,3 +63,4 @@ is_maried  <- c(F, F, T, T)
 name  <- c("Olga", "Maria", "Nastya", "Polina")
 
 my_data  <- data.frame(Name = name, Age = age, Status = is_maried)
+my_data

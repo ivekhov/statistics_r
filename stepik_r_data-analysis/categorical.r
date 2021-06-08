@@ -72,3 +72,4 @@ chisq.test(t2)
 # Fisher's Exact Test
 
 fisher.test(t2)
+

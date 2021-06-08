@@ -64,7 +64,7 @@ ggplot(swiss, aes(x = Examination, y = Education)) +
 
 
 ggplot(swiss, aes(x = lm1_fitted, y = lm1_resid)) + 
-  geom_point(size = 3) + geom_hline(y=0, col = 'red', lwd = 1)
+  geom_point(size = 3) +   geom_hline(y=0, col = 'red', lwd = 1)
 
 ggplot(swiss, aes(x = lm2_fitted, y = lm2_resid)) + 
   geom_point(size = 3) + geom_hline(y=0, col = 'red', lwd = 1)

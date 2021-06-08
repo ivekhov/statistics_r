@@ -5,13 +5,16 @@
 ?read.csv
 
 
-mydata <- read.csv('evals.csv')
+mydata <- read.csv2('evals.csv', sep=',')
 
+# setwd('./')
 
 # Summaries
 
 head(mydata, 3)
 tail(mydata)
+
+head(mydata)
 
 View(mydata)
 
@@ -27,8 +30,8 @@ summary(mydata)
 # Variables
 
 b <- mydata$score
-
-mean(mydata$score)
+b
+mean(mydata$score, na.rm = TRUE)
 
 summary(mydata$score)
 
@@ -84,8 +87,8 @@ head(subset(mydata, score > 3.5))
 mydata2 <- subset(mydata, gender == 'female')
 mydata3 <- subset(mydata, gender == 'male')
 mydata4 <- rbind(mydata2, mydata3)
-
+head(mydata)
 mydata5 <- mydata[,1:10]
-mydata6 <- mydata[,11:24]
+mydata6 <- mydata[,11:23]
 mydata7 <- cbind(mydata6, mydata5)
 
