@@ -53,14 +53,6 @@ qnorm(0.7, mean = 5, sd = 3)
 # pchisq, qchisq rt, dt, pt, qt rf, df, pf, qf
 
 
-# ================================================================
-# 
-#				REGRESSION MODELS BASICS
-#
-# ================================================================
-
-
-
 # множественная регрессия. проверка гипотез
 
 h <- swiss  # набор данных по кантонам Швейцарии (встроенный в R)
@@ -76,6 +68,7 @@ summary(model)
 
 # отдельно табличка с тестами
 coeftest(model)
+coef(model)
 
 confint(model)  # доверительные интервалы для коэффициентов
 sjp.lm(model)  # графическое представление интервалов
@@ -97,8 +90,6 @@ linearHypothesis(model, "Catholic-Agriculture=0")
 
 # масштабируем каждую переменную (вычитаем среднее, делим на стандартную ошибку)
 h_st <- mutate_each(h, "scale")
-
-
 
 glimpse(h_st)  # смотрим на новый набор данных
 # оцениваем модель по стандартизированным данным
@@ -176,16 +167,10 @@ glimpse(df)
 model_pusto <- lm(data = df, X1 ~ .)
 summary(model_pusto)
 
-
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 # сравниваем несколько моделей
 model2 <- lm(data = h, Fertility ~ Catholic + Agriculture)
 compar_12 <- mtable(model, model2)
 compar_12
-
-
 
 # сохранение результатов работы
 stuff <- list(data = h, model = model2)  # список ценных объектов
