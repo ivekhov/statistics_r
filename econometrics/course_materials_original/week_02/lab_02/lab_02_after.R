@@ -59,7 +59,7 @@ h <- swiss  # набор данных по кантонам Швейцарии (
 glimpse(h)  # бросим взгляд на данные
 help(swiss)
 View(swiss)
-
+head(h)
 # оценим модель множественной регрессии
 model <- lm(data = h, Fertility ~ Catholic + Agriculture + Examination)
 
@@ -89,7 +89,11 @@ linearHypothesis(model, "Catholic-Agriculture=0")
 # стандартизированные коэффициенты
 
 # масштабируем каждую переменную (вычитаем среднее, делим на стандартную ошибку)
+library(dplyr, help, pos = 2, lib.loc = NULL)
+h_st <- dplyr::across(h, "scale")
+
 h_st <- mutate_each(h, "scale")
+head(h_st)
 
 glimpse(h_st)  # смотрим на новый набор данных
 # оцениваем модель по стандартизированным данным

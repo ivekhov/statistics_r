@@ -2,3 +2,6 @@
 *.DS_Store
 *.Rproj
 *.history
+*.doc
+stepik_r_data_analysis/*
+computer_science_center/*
